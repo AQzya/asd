@@ -34,14 +34,32 @@ Materials: Sandstone, Concrete, WoodPlanks.
        [1 Oasis]  <- spawn
 ```
 
+## Player mechanics
+
+- **Sprint:** hold Left Shift, up to 23 seconds of running, thin stamina line at the bottom of the screen, then exhaustion until recovered. Phone gets an on-screen RUN button.
+- **Flashlight:** dim beam, toggle with F (button on phones). The creature notices a lit flashlight from much farther away.
+- **Safe zone:** nobody within 38 studs of the campfire can be targeted by the creature.
+
+## Run order in Roblox Studio (Command Bar, Edit mode)
+
+| Step | Script | What it does |
+|---|---|---|
+| 1 | `tools/01_terrain_oasis.luau` | Terrain, oasis pond, palms, campfire, spawn, night lighting (clears all terrain) |
+| 2 | `tools/02_player_systems.luau` | Sprint with stamina bar, flashlight tool (F) |
+| 3 | `tools/03_village.luau` | The mud-brick village: about 18 houses, alleys, rubble |
+| 4 | `tools/04_creature_umm_al_duwais.luau` | The creature and her AI (appears when you press Play) |
+
+Always run step 1 before step 3. Steps 2 to 4 can be rerun safely.
+
 ## Build layers
 
-| # | Layer | Script | Status |
-|---|---|---|---|
-| 1 | Terrain, oasis, palms, campfire, spawn, night lighting | `tools/01_terrain_oasis.luau` | done |
-| 2 | Mud-brick village (modular walls, parapets, arches, doors) | | next |
-| 3 | Souq, well and farm, fort | | |
-| 4 | Keys, gate, hiding spots | | |
-| 5 | Creature AI (sound and light attention, patrols) | | |
-| 6 | Audio and jump scares | | |
-| 7 | Optimization and playtest | | |
+| # | Layer | Status |
+|---|---|---|
+| 1 | Terrain, oasis, palms, campfire, spawn, night lighting | done |
+| 2 | Sprint and flashlight | done |
+| 3 | Mud-brick village | done (first version) |
+| 4 | Creature walking AI | done (first version) |
+| 5 | Old souq, well and farm, fort | next |
+| 6 | Keys, gate, hiding spots | |
+| 7 | Audio and jump scares | |
+| 8 | Optimization and playtest | |
